@@ -1,3 +1,8 @@
+/*
+TODO
+- Find a better way to hide field
+ */
+
 // Common
 Photos = new Mongo.Collection("photos");
 Photos.attachSchema(new SimpleSchema({
@@ -14,6 +19,9 @@ Photos.attachSchema(new SimpleSchema({
   url: {
     type: 'hidden',
     label: "Photo"
+  },
+  createdAt: {
+    type: Date
   }
 }));
 
@@ -50,6 +58,7 @@ if (Meteor.isClient) {
 
   Template.form.rendered = function() {
     $($('.form-group').get(2)).hide(); // Autoform does not support hidden field in schema ?
+    $($('.form-group').get(3)).hide();
   };
 
   AutoForm.hooks({
@@ -65,6 +74,8 @@ if (Meteor.isClient) {
 
             ctx.drawImage(video, 0, 0, 300, 150);
             doc.url = canvas.toDataURL('image/png');
+            doc.createdAt = new Date();
+
             return doc;
           }
 

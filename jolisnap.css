@@ -27,6 +27,14 @@ header h1 {
     font-size: 3em;
 }
 
+a ,.info {
+    color: #826f10;
+}
+
+a {
+    font-weight: bold;
+}
+
 #cameraContainer {
     float: left;
 }
