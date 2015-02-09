@@ -1,0 +1,45 @@
+<head>
+  <title>Selfie feedback</title>
+  <link href="http://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+      <header>
+          <div class="container">
+              <h1>JoliSnap</h1>
+              <h2>Take a photo about your reaction to the article and win goodies !</h2>
+              <p>Accept the request to use your camera. Click on your picture to take a snapshot.</p>
+
+              <div id="cameraContainer">
+                  <video autoplay></video>
+                  <canvas style="display:none;"></canvas>
+              </div>
+
+              <div id="form">
+                {{> form}}
+              </div>
+
+              <br class="clear" />
+          </div>
+      </header>
+
+      <div class="container" id="photos">
+        {{> photos}}
+      </div>
+</body>
+
+<template name="form">
+    <h3>Informations</h3>
+    {{> quickForm collection="Photos" id="photoForm" type="insert"}}
+</template>
+
+<template name="photos">
+    <ul>
+      {{#each photos}}
+          <li>
+              <img src="{{url}}" /> <br />
+              {{ name }}
+          </li>
+      {{/each}}
+    </ul>
+</template>

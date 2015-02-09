@@ -1,0 +1,76 @@
+body {
+    font-family:"Convergence",sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+}
+
+.clear {
+    clear: both;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+header {
+    background: #f7d325 url("mountains-yellow.gif") left bottom repeat-x;
+    box-sizing: border-box;
+    padding: 10px 10px 30px 10px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 20px 20px 20px 150px;
+    background: transparent url("joliSnap.png") left center no-repeat;
+    font-size: 3em;
+}
+
+#cameraContainer {
+    float: left;
+}
+
+#cameraContainer video {
+    border: 2px solid grey;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+#cameraContainer input {
+    width: 150px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#form {
+    float: left;
+    padding-left: 10px;
+}
+
+#form h3 {
+    margin: 0 0 10px 0;
+}
+
+form input, form button {
+    padding: 5px;
+    margin-top: 5px;
+    display: block;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+li {
+    display: inline-block;
+    height: 150px;
+    width:  180px;
+}
+
+#photos img, canvas {
+    height: 150px;
+    width:  180px;
+}
+
+#photos {
+    color: white;
+}
