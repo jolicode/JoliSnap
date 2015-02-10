@@ -1,5 +1,6 @@
 /*
 TODO
+- Add admin
 - Find a better way to hide field
  */
 
@@ -25,6 +26,12 @@ Photos.attachSchema(new SimpleSchema({
   }
 }));
 
+// Allow only insert on client
+Photos.allow({
+  insert: function(photo) {
+    return true;
+  }
+});
 
 // Client
 if (Meteor.isClient) {
