@@ -1,7 +1,10 @@
 /*
 TODO
-- Add admin
 - Find a better way to hide field
+- HTML5 Capture on safari
+- Add image on video attribute
+- https://github.com/jolicode/JoliSnap/issues/1
+- https://www.npmjs.com/package/meteor-db-utils
  */
 
 // Common
