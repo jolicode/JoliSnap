@@ -35,22 +35,19 @@ a {
     font-weight: bold;
 }
 
-#cameraContainer {
-    float: left;
-}
-
-#cameraContainer video {
-    border: 2px solid grey;
+#takePhoto {
+    display: block;
+    border: 2px dashed grey;
     width: 200px;
-    box-sizing: border-box;
+    height: 200px;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 100px;
+    text-align: center;
+    line-height: 200px;
 }
-
-#cameraContainer input {
-    width: 150px;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
 #form {
     float: left;
     padding-left: 10px;

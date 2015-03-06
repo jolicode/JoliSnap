@@ -1,0 +1,12 @@
+<template name="layout-mobile">
+    {{#ionBody}}
+        {{> ionNavBar class="bar-positive"}}
+        {{#ionNavView}}
+            {{> yield}}
+        {{/ionNavView}}
+    {{/ionBody}}
+</template>
+
+<template name="layout-desktop">
+    {{> yield}}
+</template>
