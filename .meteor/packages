@@ -15,4 +15,5 @@ meteoric:ionicons-sass
 meteoric:ionic
 mrt:moment
 meteoric:autoform-ionic
-app-base
+app-desktop
+app-mobile

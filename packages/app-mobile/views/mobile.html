@@ -1,3 +1,12 @@
+<template name="layout">
+    {{#ionBody}}
+        {{> ionNavBar class="bar-positive"}}
+        {{#ionNavView}}
+            {{> yield}}
+        {{/ionNavView}}
+    {{/ionBody}}
+</template>
+
 <template name="mobile">
     {{#contentFor "headerTitle"}}
         <h1 class="title">JoliSnap</h1>
