@@ -1,6 +1,6 @@
 <template name="layout">
     {{#ionBody}}
-        {{> ionNavBar class="bar-positive"}}
+        {{> ionNavBar class="bar-light"}}
         {{#ionNavView}}
             {{> yield}}
         {{/ionNavView}}
@@ -44,7 +44,7 @@
             <img src="{{url}}">
             <h2>{{ name }}</h2>
             <p>{{formatTime createdAt}}</p>
-            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+            {{> ionIcon icon="ios-arrow-forward" class="dark"}}
         {{/ionItem}}
     {{/each}}
 </template>

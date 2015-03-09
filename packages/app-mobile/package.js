@@ -1,18 +1,18 @@
 Package.describe({
   name: 'app-mobile',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: ''
+  summary: 'JoliSnap mobile files'
 });
 
 Package.onUse(function(api) {
   api.use([
     'meteor-platform',
     'iron:router',
+    'aldeed:autoform',
     'fourseven:scss',
+    'meteoric:ionic',
     'meteoric:ionic-sass',
     'meteoric:ionicons-sass',
-    'meteoric:ionic',
     'meteoric:autoform-ionic'
   ],['web.cordova']);
 
@@ -22,4 +22,8 @@ Package.onUse(function(api) {
     'jolisnap.js',
     'stylesheet/mobile.scss'
   ],['web.cordova']);
+});
+
+Cordova.depends({
+  "org.apache.cordova.statusbar": "0.1.10"
 });

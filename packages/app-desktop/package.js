@@ -1,8 +1,7 @@
 Package.describe({
   name: 'app-desktop',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: ''
+  summary: 'JoliSnap desktop files'
 });
 
 Package.onUse(function(api) {
@@ -13,7 +12,7 @@ Package.onUse(function(api) {
     'mdg:camera',
     'iron:router',
     'fortawesome:fontawesome'
-  ],['client','server']);
+  ],['client']);
 
   api.addFiles([
     'views/jolisnap.html',
