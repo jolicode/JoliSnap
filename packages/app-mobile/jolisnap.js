@@ -2,6 +2,10 @@ Meteor.startup(function () {
   AutoForm.setDefaultTemplate('ionic');
 });
 
+// Template subscriptions
+Meteor.subscribe('photos');
+
+// Helpers
 Template.mobilePhotos.helpers({
   photos: function () {
     return Photos.find({}, {sort: {'createdAt': -1}});
@@ -14,6 +18,7 @@ Template.mobilePhotosShow.helpers({
   }
 });
 
+// Forms
 AutoForm.hooks({
   'photoForm': {
     onSuccess: function (operation, result, template) {

@@ -1,4 +1,23 @@
+// Subscriptions
+Template.photos.created = function () {
+  var self = this;
+  this.ready = new ReactiveVar(false);
+
+  this.autorun(function () {
+    self.subscription = Meteor.subscribe('photos');
+    if (self.subscription.ready()) {
+      self.ready.set(true);
+    } else {
+      self.ready.set(false);
+    }
+  }.bind(this));
+};
+
+// Helpers
 Template.photos.helpers({
+  isReady: function () {
+    return Template.instance().ready.get();
+  },
   photos: function () {
     return Photos.find({}, {sort: {'createdAt': -1}});
   }

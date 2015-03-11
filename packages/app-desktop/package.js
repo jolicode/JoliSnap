@@ -11,7 +11,8 @@ Package.onUse(function(api) {
     'aldeed:collection2',
     'mdg:camera',
     'iron:router',
-    'fortawesome:fontawesome'
+    'fortawesome:fontawesome',
+    'reactive-var'
   ],['client']);
 
   api.addFiles([

@@ -79,3 +79,10 @@ li {
 #photos {
     color: white;
 }
+
+.loading {
+    padding: 20px;
+    color: #f7d325;
+    font-size: 2em;
+    text-align: center;
+}

@@ -35,12 +35,16 @@
 </template>
 
 <template name="photos">
+{{#if isReady}}
     <ul>
-      {{#each photos}}
-          <li>
-              <img src="{{url}}" /> <br />
-              {{ name }}
-          </li>
-      {{/each}}
+        {{#each photos}}
+            <li>
+                <img src="{{url}}" /> <br />
+                {{ name }}
+            </li>
+        {{/each}}
     </ul>
+{{else}}
+    <div class="loading"><i class="fa fa-cog fa-spin"></i> Loading photos</div>
+{{/if}}
 </template>

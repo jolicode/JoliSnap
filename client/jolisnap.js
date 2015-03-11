@@ -9,8 +9,6 @@ Mobile
 - Image / logo for the app
  */
 
-Meteor.subscribe("photos");
-
 AutoForm.hooks({
   photoForm: {
     before: {
