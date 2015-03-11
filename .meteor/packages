@@ -7,3 +7,10 @@
 meteor-platform
 aldeed:autoform
 aldeed:collection2
+mdg:camera
+iron:router
+mrt:moment
+meteoric:ionic-sass
+meteoric:ionicons-sass
+app-desktop
+app-mobile

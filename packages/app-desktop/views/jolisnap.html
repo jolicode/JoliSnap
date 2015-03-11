@@ -1,0 +1,50 @@
+<template name="layout">
+    {{> yield}}
+</template>
+
+<template name="home">
+    <a href="https://github.com/jolicode/JoliSnap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header>
+        <div class="container">
+            <h1>JoliSnap</h1>
+            <p class="info">This app is a demo for the article "<a href="http://jolicode.com/blog/meteor-pour-un-developpement-plus-rapide-qu-une-fusee">Meteor, pour un développement plus rapide qu’une fusée</a>" on <a href="http://jolicode.com">Jolicode</a>.</p>
+
+            <h2>Take a photo about your reaction to the article and win goodies !</h2>
+            <p>Accept the request to use your camera and fill your informations to participate.</p>
+
+            {{> form}}
+
+            <br class="clear" />
+        </div>
+    </header>
+
+    <div class="container" id="photos">
+        {{> photos}}
+    </div>
+</template>
+
+<template name="form">
+    <a href="" id="takePhoto">
+        <i class="fa fa-camera-retro"></i>
+    </a>
+    <div id="form">
+        <h3>Informations</h3>
+        {{> quickForm collection="Photos" id="photoForm" type="insert" omitFields="url,createdAt"}}
+    </div>
+</template>
+
+<template name="photos">
+{{#if isReady}}
+    <ul>
+        {{#each photos}}
+            <li>
+                <img src="{{url}}" /> <br />
+                {{ name }}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <div class="loading"><i class="fa fa-cog fa-spin"></i> Loading photos</div>
+{{/if}}
+</template>

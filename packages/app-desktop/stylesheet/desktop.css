@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background: #f7d325 url("mountains-yellow.gif") left bottom repeat-x;
+    background: #f7d325 url("/packages/app-desktop/public/mountains-yellow.gif") left bottom repeat-x;
     box-sizing: border-box;
     padding: 10px 10px 30px 10px;
 }
@@ -23,11 +23,11 @@ header {
 header h1 {
     margin: 0;
     padding: 20px 20px 20px 150px;
-    background: transparent url("joliSnap.png") left center no-repeat;
+    background: transparent url("/packages/app-desktop/public/joliSnap.png") left center no-repeat;
     font-size: 3em;
 }
 
-a ,.info {
+a.info {
     color: #826f10;
 }
 
@@ -35,22 +35,19 @@ a {
     font-weight: bold;
 }
 
-#cameraContainer {
-    float: left;
-}
-
-#cameraContainer video {
-    border: 2px solid grey;
+#takePhoto {
+    display: block;
+    border: 2px dashed grey;
     width: 200px;
-    box-sizing: border-box;
+    height: 200px;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 100px;
+    text-align: center;
+    line-height: 200px;
 }
-
-#cameraContainer input {
-    width: 150px;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
 #form {
     float: left;
     padding-left: 10px;
@@ -81,4 +78,11 @@ li {
 
 #photos {
     color: white;
+}
+
+.loading {
+    padding: 20px;
+    color: #f7d325;
+    font-size: 2em;
+    text-align: center;
 }

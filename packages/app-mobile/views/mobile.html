@@ -1,0 +1,76 @@
+<template name="layout">
+    {{#ionBody}}
+        {{> ionNavBar class="bar-light"}}
+        {{#ionNavView}}
+            {{> yield}}
+        {{/ionNavView}}
+    {{/ionBody}}
+</template>
+
+<template name="mobile">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">JoliSnap</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-modal="mobileForm">{{> ionIcon icon="camera"}}</button>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#ionList}}
+                {{> mobilePhotos}}
+            {{/ionList}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
+
+<template name="mobileForm">
+    {{#ionModal focusFirstInput=true customTemplate=true}}
+    <div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">Add a snap</h2>
+        <button type="submit" class="button button-positive button-clear">Add</button>
+    </div>
+    <div class="content has-header">
+        {{> quickForm collection="Photos" id="photoForm" type="insert" omitFields="url,createdAt"}}
+    </div>
+{{/ionModal}}
+</template>
+
+<template name="mobilePhotos">
+    {{#each photos}}
+        {{#ionItem path="mobile.photos.show" buttonRight=true avatar=true class="item-icon-right"}}
+            <img src="{{url}}">
+            <h2>{{ name }}</h2>
+            <p>{{formatTime createdAt}}</p>
+            {{> ionIcon icon="ios-arrow-forward" class="dark"}}
+        {{/ionItem}}
+    {{/each}}
+</template>
+
+<template name="mobilePhotosShow">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton path="mobile" text="JoliSnap"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Photo</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent class="padding photo-detail"}}
+            {{#with photo}}
+                <div class="card">
+                    <div class="item item-divider">
+                        <h2>{{name}}</h2>
+                        <p>{{formatTime createdAt}}</p>
+                    </div>
+                    <div class="item item-image">
+                        <img src="{{url}}">
+                    </div>
+                </div>
+            {{/with}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
