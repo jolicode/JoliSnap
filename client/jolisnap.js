@@ -1,14 +1,3 @@
-/*
-TODO
-- Add a config to force mobile on desktop (easy debug)
-- Find a better way to hide field
-- https://github.com/jolicode/JoliSnap/issues/1
-- https://www.npmjs.com/package/meteor-db-utils
-Mobile
-- Better css
-- Image / logo for the app
- */
-
 AutoForm.hooks({
   photoForm: {
     before: {
